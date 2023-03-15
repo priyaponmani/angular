@@ -1,0 +1,34 @@
+<div class="container-fluid">
+   
+    <h4 class="heading">Angular Display Data from Json File Example</h4>
+    <button (click)="addList()" type="button" class="btn btn-info align">Add</button>
+    <table class="table table-bordered">
+      <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Amount</th>
+            <th>Qty</th>
+            <th>Item</th>
+            <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>        
+      </tbody>
+      <tr *ngFor='let item of data; let i = index'>
+            <td>{{item['id']}}</td>
+            <td>{{item['name']}}</td>
+            <td>{{item['state']}}</td>
+            <td>{{item['zip']}}</td>
+            <td>{{item['amount']}}</td>
+            <td>{{item['qty']}}</td>
+            <td>{{item['item']}}</td>
+            <td> <button type="button" class="close" aria-label="Close" (click) = "deleteRow(item['id'])">
+                <span aria-hidden="true">&times;</span>
+              </button></td>
+          </tr>     
+    </table>
+  </div>
+  
